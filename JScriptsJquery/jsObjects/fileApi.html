@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>File API</title>
+        <script src="../jquery-3.3.1.min.js"></script>
+        <script>
+            window.onload = function(e){
+                let ms =document.getElementById("ms");
+            // /ms.innerText = `X: ${e.clientX}, Y:${e.clientY}`;
+                window.onmousemove = function(e){
+                    ms.innerText =`X: ${e.clientX}, Y: ${e.clientY}`;
+                }
+            }
+            
+            /*
+        $(document).ready(function(e){
+            
+          //  alert(document.body.firstChild.nodeName);
+         //   alert(document.body.firstChild.tagName)
+            function renderImage(image) {
+                var fileReader = new FileReader();
+
+                fileReader.onload = function(e) {
+                    var theurl = e.target.result;
+                    $("<div />").html(`<img src=${theurl}/>`).after("#result");
+                }
+
+                fileReader.readAsDataURL(image);
+            }
+
+                $("#fle").change(function(){
+                    renderImage(this.files[0]);
+                })
+                let result = document.getElementById("result");
+                let colors =["red", "blue", "green", "orange", "yellow"];
+                setInterval(()=>{
+                   result.hidden = !result.hidden;
+                   result.style.color = colors[Math.floor((Math.random()*colors.length) - 1)];
+                }, 2000)
+
+                    let ms = document.getElementById("ms");
+               ms.innerText = `X:${event.}`
+               //$(ms).text(`X: ${e.}`)
+
+        })
+        */
+        </script>
+    </head>
+    <body>
+<input type="file" id="fle" />
+<h1 id="result" hidden>
+    This is Blinking Text
+</h1>
+<h1 id="ms"></h1>
+    </body>
+</html>

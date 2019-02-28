@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Jquery Basics</title>
+        <script src="./jquery-3.3.1.min.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                var labelElement = document.getElementsByTagName("label");
+                var imgElement = document.getElementsByTagName("img");
+                var secondRowElement = $("tr:eq(1)");
+                //$("img").not(":eq(3)").css("border", "5px solid yellow");
+                //$("img:odd").siblings().css("border", "5px solid yellow");
+                //secondRowElement.children().css("border", "10px solid red");
+                    $("img:odd").mouseover(function(e){
+                        for(var i=0;i<imgElement.length;i++) {
+                            var labelName = imgElement[i].getAttribute("src");
+                            labelElement[i].innerText = labelName.substring(labelName.length - 8);
+                            labelElement[i].style.border = "2px solid green";
+                        }
+                        $(this).css({
+                            border: "2px solid brown",
+                            opacity: 0.5
+                        });
+                    }).mouseout(function(e){
+                        $(this).css({
+                            opacity: 1.0,
+                            border: "0px"
+                        });
+                    })
+                      //  $("<h1>Hello Baby</h1>").insertAfter("#table");
+                      $('<td />').html($('<input type="button" value="cancel order" />')).insertAfter("tr:last-child td");
+                  // console.log(newElement.nodeName);
+                   $("table").css("background-color", "red");
+            })
+        </script>
+    </head>
+    <body>
+        <table id="table">
+            <tr>
+                <td><label></label><img src="./img/img1.jpg" width="100" height="100"/></td>
+                <td><label></label><img src="./img/img2.jpg" width="100" height="100"/></td>
+                <td><label></label><img src="./img/img3.jpg" width="100" height="100"/></td>
+                <td><label></label><img src="./img/img4.jpg" width="100" height="100"/></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td><td><input type="text" /></td>
+                <td><input type="text" /></td><td><input type="text" /></td>
+                
+            </tr>
+            <tr>
+                    <td><label></label><img src="./img/img5.jpg" width="100" height="100"/></td>
+                    <td><label></label><img src="./img/img6.jpg" width="100" height="100"/></td>
+                    <td><label></label><img src="./img/img7.jpg" width="100" height="100"/></td>
+                    <td><label></label><img src="./img/img8.jpg" width="100" height="100"/></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td><td><input type="text" /></td>
+                    <td><input type="text" /></td> <td><input type="text" /></td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="button" value="place order"/></td>
+                </tr>
+
+        </table>
+
+    </body>
+</html>
